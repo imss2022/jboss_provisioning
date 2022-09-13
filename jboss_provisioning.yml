@@ -27,7 +27,7 @@
       service:
         name: jboss-eap-rhel
         state: stopped
-- name: Create JBoss EAP Group
+    - name: Create JBoss EAP Group
       group:
         name: "{{ jboss_eap_group }}"
         system: yes
@@ -53,7 +53,7 @@
         dest: "{{ eap_deploy_dir }}"
         owner: "{{ jboss_eap_user }}"
         group: "{{ jboss_eap_group }}"
-   - name: Create symlink
+    - name: Create symlink
       file:
         src: "{{eap_home}}"
         dest: "/opt/jboss-eap"
